@@ -162,7 +162,7 @@ class PostController extends Controller
             ->route('posts.index')
             ->with('notice', '記事を削除しました');
     }
-    
+
     public static function createFileName($file)
     {
         return date('YmdHis') . '_' . $file->getClientOriginalName();
