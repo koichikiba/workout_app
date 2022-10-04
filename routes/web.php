@@ -21,8 +21,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__ . '/auth.php';
-
 Route::resource('posts', PostController::class)
     ->only(['create', 'store', 'edit', 'update', 'destroy'])
     ->middleware('auth');
@@ -30,6 +28,4 @@ Route::resource('posts', PostController::class)
 Route::resource('posts', PostController::class)
     ->only(['show', 'index']);
 
-Route::resource('posts.favorites', FavoriteController::class)
-    ->only(['store', 'destroy'])
-    ->middleware('auth');
+require __DIR__ . '/auth.php';

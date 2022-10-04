@@ -15,9 +15,7 @@
                 <input type="text" name="title" class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3" required placeholder="タイトル" value="{{ old('title', $post->title) }}">
             </div>
             <div class="mb-4">
-                <label class="block text-gray-700 text-sm mb-2" for="category">
-                    カテゴリー
-                </label>
+                <label class="block text-gray-700 text-sm mb-2" for="category">カテゴリー</label>
                 @foreach ($categories as $category)
                     <div>
                         <input type="radio" name="category_id" id="category{{ $category->id }}" value="{{ $category->id }}" {{ old('category_id', $post->category_id) == $category->id ? 'checked': '' }}>
@@ -25,16 +23,14 @@
                     </div>
                 @endforeach
             </div>
+
             <div class="mb-4">
-                <label class="block text-gray-700 text-sm mb-2" for="body">
-                    詳細
-                </label>
+                <label class="block text-gray-700 text-sm mb-2" for="body">詳細</label>
                 <textarea name="description" rows="10" class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full py-2 px-3" required>{{ old('description', $post->description) }}</textarea>
             </div>
+
             <div class="mb-4">
-                <label class="block text-gray-700 text-sm mb-2" for="image">
-                    ワークアウトの画像
-                </label>
+                <label class="block text-gray-700 text-sm mb-2" for="image">ワークアウトの画像</label>
                 <img src="{{ Storage::url($post->image_path) }}" alt="" class="mb-4 md:w-2/5 sm:auto">
                 <input type="file" name="image" class="border-gray-300">
             </div>

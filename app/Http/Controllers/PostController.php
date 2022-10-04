@@ -94,8 +94,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $categories = Category::all();
         $post = Post::find($id);
+        $categories = Category::all();
         return view('posts.edit', compact('post', 'categories'));
     }
 

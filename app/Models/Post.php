@@ -12,9 +12,7 @@ class Post extends Model
 
     protected $fillable = [
         'title',
-        'description',
-        'image',
-        'category_id'
+        'body',
     ];
 
     public function user()
@@ -22,9 +20,9 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function category()
+    public function getImageUrlAttribute()
     {
-        return $this->belongsTo(Category::class);
+        return Storage::url($this->image_path);
     }
 
     public function getImagePathAttribute()
@@ -32,4 +30,8 @@ class Post extends Model
         return 'images/posts/' . $this->image;
     }
 
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

@@ -12,7 +12,7 @@
                 記事作成日: {{ $post->created_at }}
             </p>
             <img src="{{ $post->image_url }}" alt="" class="mb-4">
-            <p class="text-gray-700 text-base">{!! nl2br(e($post->description)) !!}</p>
+            <p class="text-gray-700 text-base">{!! nl2br(e($post->body)) !!}</p>
         </article>
 
         <div class="flex flex-row text-center my-4">
