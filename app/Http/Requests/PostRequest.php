@@ -32,7 +32,8 @@ class PostRequest extends FormRequest
             'category_id' => 'required',
         ];
 
-        if ($route === 'posts.store' || ($route === 'posts.update' && $request->file('image'))) {
+        if ($route === 'posts.store' ||
+            ($route === 'posts.update' && $this->file('image'))) {
             $rule['image'] = 'required|file|image|mimes:jpg,png';
         }
 

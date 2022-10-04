@@ -14,7 +14,7 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', [Post9Controller::class, 'index'])
+Route::get('/', [PostController::class, 'index'])
     ->name('root');
 
 Route::get('/dashboard', function () {
