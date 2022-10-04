@@ -12,13 +12,13 @@
                 記事作成日: {{ $post->created_at }}
             </p>
             <img src="{{ $post->image_url }}" alt="" class="mb-4">
-            <p class="text-gray-700 text-base">{!! nl2br(e($post->body)) !!}</p>
+            <p class="text-gray-700 text-base">{!! nl2br(e($post->description)) !!}</p>
         </article>
 
         <div class="flex flex-row text-center my-4">
             @can('update', $post)
                 <a href="{{ route('posts.edit', $post) }}"
-                    class="bg-purple-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-20 mr-2">編集</a>
+                    class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-20 mr-2">編集</a>
             @endcan
             @can('delete', $post)
                 <form action="{{ route('posts.destroy', $post) }}" method="post">
