@@ -22,13 +22,13 @@ class PostRequest extends FormRequest
      *
      * @return array
      */
-    public function rules(Request $request)
+    public function rules()
     {
         $route = $this->route()->getName();
         
         $rule = [
             'title' => 'required|string|max:30',
-            'description' => 'required|string|max:200',
+            'description' => 'required|string|max:2000',
             'category_id' => 'required',
         ];
 

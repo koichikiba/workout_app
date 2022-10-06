@@ -11,6 +11,8 @@
                             {{ $post->title }}</h2>
                         <h3>{{ $post->user->name }}</h3>
                         <p class="text-sm mb-2 md:text-base font-normal text-gray-600">
+                            トレーニング部位: {{ $post->category->name }}
+                        <p class="text-sm mb-2 md:text-base font-normal text-gray-600">
                             記事作成日: {{ $post->created_at }}
                         </p>
                         <img class="w-full mb-2" src="{{ Storage::url($post->image_path) }}" alt="">

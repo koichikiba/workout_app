@@ -9,6 +9,8 @@
                 {{ $post->title }}</h2>
             <h3>{{ $post->user->name }}</h3>
             <p class="text-sm mb-2 md:text-base font-normal text-gray-600">
+                トレーニング部位: {{ $post->category->name }}
+            <p class="text-sm mb-2 md:text-base font-normal text-gray-600">
                 記事作成日: {{ $post->created_at }}
             </p>
             <img src="{{ $post->image_url }}" alt="" class="mb-4">
