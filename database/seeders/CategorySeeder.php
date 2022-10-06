@@ -15,10 +15,10 @@ class CategorySeeder extends Seeder
     public function run()
     {
         $param = [[
-            'name' => '大胸筋',
+            'name' => '胸',
         ],
         [
-            'name' => '背筋',
+            'name' => '背中',
         ],
         [
             'name' => '脚',
@@ -27,10 +27,10 @@ class CategorySeeder extends Seeder
             'name' => '肩',
         ],
         [
-            'name' => '上腕二頭筋',
+            'name' => '腕(上腕二頭筋)',
         ],
         [
-            'name' => '上腕三頭筋',
+            'name' => '腕(上腕三頭筋)',
         ],
         [
             'name' => 'その他',
